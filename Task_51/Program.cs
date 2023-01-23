@@ -1,4 +1,11 @@
-﻿internal partial class Program
+﻿// Задача 51: Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, и замените эти элементы на их квадраты.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Сумма элементов главной диагонали: 1+9+2 = 12
+
+internal partial class Program
 {
     private static void Main(string[] args)
     {
@@ -7,12 +14,12 @@
         System.Console.WriteLine();
         Console.WriteLine($"Сумма главной диагонали {SumMainDiagonal(array)}");
     }
-    static int SumMainDiagonal(int[,] arr)
+    static int SumMainDiagonal(int[,] array)
     {
         int sum = 0;
-        int size = Math.Min(arr.GetLength(0), arr.GetLength(1));
+        int size = Math.Min(array.GetLength(0), array.GetLength(1));
         for (int i = 0; i < size; i++)
-            sum += arr[i, i];
+            sum += array[i, i];
         return sum;
     }
 
