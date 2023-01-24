@@ -38,14 +38,14 @@ internal partial class Program
         }
     }
 
-    static int GetMinValueFromArray(int[,] array)
+    static string GetMinValueFromArray(int[,] array)
     {
         int min = array[0,0];
         foreach (int number in array)
         {
             if(number < min) min = number;
         }
-        return min;
+        return min < 0 ? $"{min}" : "отрицательных чисел нет";
     }
 
     static int GetMaxValueFromArray(int[,] array)
