@@ -42,7 +42,7 @@ internal partial class Program
 
     static string GetNumberInArrayByIndex(int[,] array, int index)
     {
-        if (index < 1 || index > array.GetLength(0) * array.GetLength(1))
+        if (index < 1 || index > array.Length)
             return "такого числа в массиве нет";
         else
         {

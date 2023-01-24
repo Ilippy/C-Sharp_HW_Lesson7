@@ -15,7 +15,7 @@ internal partial class Program
         PrintArray(array);
         Console.WriteLine();
         Console.WriteLine($"Минимальный из всех отрицательных элементов => {GetMinValueFromArray(array)}");
-        Console.WriteLine($"Максимальный из всех элементов массива => {GetMaxValueFromArray(array)}");
+        Console.WriteLine($"Максимальный из модулей всех элементов массива => {GetMaxValueFromArray(array)}");
     }
 
     static int[,] CreateRandomArray(int rows, int columns, int minValue, int maxValue)
@@ -50,10 +50,10 @@ internal partial class Program
 
     static int GetMaxValueFromArray(int[,] array)
     {
-        int max = array[0,0];
+        int max = 0;
         foreach (int number in array)
         {
-            if(number > max) max = number;
+            if(Math.Abs(number) > Math.Abs(max)) max = number;
         }
         return max;
     }
